@@ -1,4 +1,5 @@
 import { Reveal } from "../Reveal";
+import { Parallax } from "../Parallax";
 
 const channels = [
   { label: "Email", value: "jay@tienvuong.studio", href: "mailto:jay@tienvuong.studio" },
@@ -39,26 +40,28 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={200} className="md:col-span-5">
-            <div className="glass rounded-sm p-8">
-              <h4 className="font-serif text-xl italic">Elsewhere</h4>
-              <ul className="mt-6 space-y-4">
-                {channels.map((c) => (
-                  <li key={c.label}>
-                    <a
-                      href={c.href}
-                      className="group flex items-baseline justify-between gap-4 border-t border-ink/10 pt-4 transition-colors first:border-t-0 first:pt-0 hover:text-accent"
-                    >
-                      <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                        {c.label}
-                      </span>
-                      <span className="font-serif text-lg transition-transform duration-300 group-hover:-translate-x-1">
-                        {c.value}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Parallax speed={0.1}>
+              <div className="glass-strong rounded-2xl p-8">
+                <h4 className="font-serif text-xl italic">Elsewhere</h4>
+                <ul className="mt-6 space-y-4">
+                  {channels.map((c) => (
+                    <li key={c.label}>
+                      <a
+                        href={c.href}
+                        className="group flex items-baseline justify-between gap-4 border-t border-white/10 pt-4 transition-colors first:border-t-0 first:pt-0 hover:text-accent"
+                      >
+                        <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                          {c.label}
+                        </span>
+                        <span className="font-serif text-lg transition-transform duration-300 group-hover:-translate-x-1">
+                          {c.value}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Parallax>
           </Reveal>
         </div>
 

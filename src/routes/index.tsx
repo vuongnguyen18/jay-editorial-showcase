@@ -36,8 +36,9 @@ function Index() {
       <CursorTrail />
       <Nav />
       <main
+        data-stagger
         className="relative opacity-0"
-        style={{ animation: "fade-in 0.9s ease-out forwards" }}
+        style={{ animation: "fade-in 0.6s ease-out forwards" }}
       >
         <Hero />
         <About />

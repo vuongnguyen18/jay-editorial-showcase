@@ -51,41 +51,43 @@ export function Projects() {
           </div>
         </Reveal>
 
-        <ul className="divide-y divide-ink/15 border-y border-ink/15">
+        <ul className="grid gap-6">
           {projects.map((p, i) => (
             <Reveal key={p.no} delay={i * 80} as="li">
               <a
                 href="#"
-                className="group grid grid-cols-12 gap-4 py-10 transition-colors hover:bg-cream/60"
+                className="glass group block rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] md:p-8"
               >
-                <div className="col-span-2 md:col-span-1 font-mono text-xs text-accent">{p.no}</div>
-                <div className="col-span-10 md:col-span-6">
-                  <h3 className="font-serif text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
-                    {p.title}
-                    <span className="ml-3 text-base italic text-muted-foreground">— {p.kind}</span>
-                  </h3>
-                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/70">
-                    {p.blurb}
-                  </p>
-                </div>
-                <div className="col-span-7 md:col-span-3 flex flex-wrap gap-2 self-center">
-                  {p.tags.map((t) => (
+                <div className="grid grid-cols-12 items-center gap-4">
+                  <div className="col-span-2 md:col-span-1 font-mono text-xs text-accent">{p.no}</div>
+                  <div className="col-span-10 md:col-span-6">
+                    <h3 className="font-serif text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
+                      {p.title}
+                      <span className="ml-3 text-base italic text-muted-foreground">— {p.kind}</span>
+                    </h3>
+                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/75">
+                      {p.blurb}
+                    </p>
+                  </div>
+                  <div className="col-span-7 md:col-span-3 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground backdrop-blur"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="col-span-5 md:col-span-2 flex items-center justify-end gap-3 font-mono text-xs text-muted-foreground">
+                    {p.year}
                     <span
-                      key={t}
-                      className="rounded-full border border-ink/20 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground"
+                      aria-hidden
+                      className="inline-block transition-transform duration-500 group-hover:translate-x-1"
                     >
-                      {t}
+                      ↗
                     </span>
-                  ))}
-                </div>
-                <div className="col-span-5 md:col-span-2 flex items-center justify-end gap-3 self-center font-mono text-xs text-muted-foreground">
-                  {p.year}
-                  <span
-                    aria-hidden
-                    className="inline-block transition-transform duration-500 group-hover:translate-x-1"
-                  >
-                    ↗
-                  </span>
+                  </div>
                 </div>
               </a>
             </Reveal>
