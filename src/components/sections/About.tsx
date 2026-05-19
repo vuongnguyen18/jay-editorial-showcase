@@ -1,4 +1,5 @@
 import { Reveal } from "../Reveal";
+import { Parallax } from "../Parallax";
 
 export function About() {
   return (
@@ -34,22 +35,24 @@ export function About() {
           </Reveal>
 
           <Reveal delay={250} className="md:col-span-5">
-            <div className="glass rounded-sm p-8 transition-transform duration-500 hover:-translate-y-1">
-              <h3 className="font-serif text-2xl italic">A few principles</h3>
-              <ul className="mt-6 space-y-4 text-sm">
-                {[
-                  ["Calm over clever", "Restraint is a feature."],
-                  ["Type as foundation", "Hierarchy before color."],
-                  ["Edit relentlessly", "The best line is the one removed."],
-                  ["Build for people", "Ship things that feel inevitable."],
-                ].map(([t, d]) => (
-                  <li key={t} className="border-t border-ink/10 pt-4 first:border-t-0 first:pt-0">
-                    <div className="font-serif text-lg">{t}</div>
-                    <div className="mt-1 text-muted-foreground">{d}</div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Parallax speed={0.08}>
+              <div className="glass-strong rounded-2xl p-8 transition-transform duration-500 hover:-translate-y-1">
+                <h3 className="font-serif text-2xl italic">A few principles</h3>
+                <ul className="mt-6 space-y-4 text-sm">
+                  {[
+                    ["Calm over clever", "Restraint is a feature."],
+                    ["Type as foundation", "Hierarchy before color."],
+                    ["Edit relentlessly", "The best line is the one removed."],
+                    ["Build for people", "Ship things that feel inevitable."],
+                  ].map(([t, d]) => (
+                    <li key={t} className="border-t border-white/10 pt-4 first:border-t-0 first:pt-0">
+                      <div className="font-serif text-lg">{t}</div>
+                      <div className="mt-1 text-muted-foreground">{d}</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Parallax>
           </Reveal>
         </div>
       </div>

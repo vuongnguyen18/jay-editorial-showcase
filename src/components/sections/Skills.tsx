@@ -34,7 +34,7 @@ export function Skills() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {groups.map((g, i) => (
             <Reveal key={g.title} delay={i * 100}>
-              <div className="glass h-full rounded-sm p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(60,50,40,0.25)]">
+              <div className="glass h-full rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.55)]">
                 <div className="mb-6 flex items-baseline justify-between">
                   <h3 className="font-serif text-2xl italic">{g.title}</h3>
                   <span className="font-mono text-[10px] text-accent">0{i + 1}</span>
