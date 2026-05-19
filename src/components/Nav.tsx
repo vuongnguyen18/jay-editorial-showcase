@@ -28,7 +28,7 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5"
       >
-        <a href="#top" className="font-serif text-lg tracking-tight">
+        <a href="#top" className="font-serif text-lg tracking-tight whitespace-nowrap">
           <span className="italic">Tien Vuong</span> Nguyen
           <span className="text-accent">.</span>
         </a>
