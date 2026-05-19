@@ -13,7 +13,7 @@ export function Hero() {
         </div>
 
         <h1
-          className="font-serif text-[clamp(3rem,11vw,11rem)] leading-[0.92] tracking-[-0.04em] opacity-0"
+          className="font-serif text-7xl leading-[0.92] tracking-[-0.04em] sm:text-8xl md:text-[9rem] lg:text-[11rem] opacity-0"
           style={{ animation: "fade-up 1.1s 0.25s cubic-bezier(0.22,1,0.36,1) forwards" }}
         >
           Tien Vuong<br />
