@@ -2,36 +2,28 @@ import { Reveal } from "../Reveal";
 
 const roles = [
   {
-    period: "2023 — Now",
-    role: "Founding Engineer",
-    org: "Independent Studio",
-    place: "Remote",
+    period: "2025 — Now",
+    role: "Data Analyst",
+    org: "BIG Digital",
+    place: "Melbourne",
     notes:
-      "Partnering with founders and design studios on editorial products, brand-led web experiences, and design systems.",
+      "Working with e-commerce and marketing data across WordPress and Shopify. Building automated reporting pipelines with Python and SQL, improving data access for stakeholders, and supporting SEO performance analysis through keyword tracking and reporting.",
   },
   {
-    period: "2021 — 2023",
-    role: "Senior Product Engineer",
-    org: "Linear-adjacent SaaS",
-    place: "San Francisco",
+    period: "2023 — 2024",
+    role: "Web Developer",
+    org: "FPT Software",
+    place: "Hanoi, Vietnam",
     notes:
-      "Shipped the writing & collaboration surfaces. Led the typography and motion language for the v3 product.",
+      "Designed and implemented responsive web applications using ReactJS, Angular, and MongoDB. Improved front-end performance, built reusable UI components, and resolved front-end/back-end issues in staging and production environments.",
   },
   {
-    period: "2019 — 2021",
-    role: "Product Designer & Engineer",
-    org: "Boutique design agency",
-    place: "Berlin",
+    period: "2022 — 2023",
+    role: "Web Developer",
+    org: "CMC Global",
+    place: "Hanoi, Vietnam",
     notes:
-      "Designed and built award-winning sites for cultural institutions, including two FWA-of-the-day projects.",
-  },
-  {
-    period: "2016 — 2019",
-    role: "Frontend Engineer",
-    org: "Early-stage startups",
-    place: "Hà Nội · Singapore",
-    notes:
-      "Wore many hats. Learned the craft. Made everything I'd later refine.",
+      "Translated wireframes and mockups into functional user interfaces using React.js. Maintained website content and features based on user feedback and business requirements, while developing strong collaboration and delivery skills.",
   },
 ];
 
@@ -42,7 +34,7 @@ export function Experience() {
         <Reveal>
           <div className="mb-16 flex items-baseline gap-6">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">§ 04</span>
-            <h2 className="font-serif text-4xl md:text-5xl">A Brief Chronology</h2>
+            <h2 className="font-serif text-4xl md:text-5xl">Work Experience</h2>
             <span className="h-px flex-1 editorial-rule" />
           </div>
         </Reveal>

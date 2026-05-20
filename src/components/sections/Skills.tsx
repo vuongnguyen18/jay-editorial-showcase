@@ -2,20 +2,20 @@ import { Reveal } from "../Reveal";
 
 const groups = [
   {
-    title: "Craft",
-    items: ["TypeScript", "React", "Next.js", "Remix", "Swift", "Node"],
+    title: "Analysis",
+    items: ["Python", "R", "SQL", "Excel", "Statistical Analysis", "Data Cleaning"],
   },
   {
-    title: "Design",
-    items: ["Figma", "Typography", "Motion design", "Systems thinking"],
+    title: "Business Intelligence",
+    items: ["Power BI", "Tableau", "DAX", "Power Query", "Dashboard Design", "KPI Reporting"],
   },
   {
-    title: "Infrastructure",
-    items: ["PostgreSQL", "Edge runtimes", "tRPC", "Supabase", "Cloudflare"],
+    title: "Machine Learning",
+    items: ["scikit-learn", "Predictive Modelling", "Random Forest", "TF-IDF", "SVM", "K-Means"],
   },
   {
-    title: "Tooling",
-    items: ["Vite", "Tailwind", "GSAP", "Three.js", "Linear", "Notion"],
+    title: "Data & Systems",
+    items: ["MySQL", "Data Modelling", "Star Schema", "CRUD Queries", "WordPress", "Shopify"],
   },
 ];
 
@@ -26,7 +26,7 @@ export function Skills() {
         <Reveal>
           <div className="mb-16 flex items-baseline gap-6">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">§ 03</span>
-            <h2 className="font-serif text-4xl md:text-5xl">A Working Vocabulary</h2>
+            <h2 className="font-serif text-4xl md:text-5xl">Tools & Technologies</h2>
             <span className="h-px flex-1 editorial-rule" />
           </div>
         </Reveal>

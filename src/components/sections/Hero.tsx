@@ -13,12 +13,13 @@ export function Hero() {
         </div>
 
         <h1
-          className="font-serif text-7xl leading-[0.92] tracking-[-0.04em] sm:text-8xl md:text-[9rem] lg:text-[11rem] opacity-0"
+          className="font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl md:text-[5.5rem] lg:text-[7rem] xl:text-[8.5rem] opacity-0"
           style={{ animation: "fade-up 1.1s 0.25s cubic-bezier(0.22,1,0.36,1) forwards" }}
         >
-          Tien Vuong<br />
-          <span className="italic text-accent">Nguyen</span>
-          <span className="text-accent">.</span>
+          <span className="block whitespace-nowrap">Tien Vuong Nguyen</span>
+          <span className="block italic text-accent whitespace-nowrap">
+            Jay Nguyen<span className="text-accent">.</span>
+          </span>
         </h1>
 
         <div
@@ -52,13 +53,13 @@ export function Hero() {
                 href="#projects"
                 className="group relative overflow-hidden rounded-full bg-ink px-6 py-3 text-xs uppercase tracking-[0.2em] text-paper transition-transform hover:-translate-y-0.5"
               >
-                <span className="relative z-10">View work</span>
+                <span className="relative z-10">View My Work</span>
               </a>
               <a
-                href="#contact"
+                href="https://drive.google.com/uc?export=download&id=12sT98Vx5BNL7Fn3owon_GIT7Z9OpSsx6"
                 className="rounded-full border border-ink/40 px-6 py-3 text-xs uppercase tracking-[0.2em] transition-all hover:border-ink hover:bg-ink/5"
               >
-                Say hello
+                Download Resume
               </a>
             </div>
           </div>
