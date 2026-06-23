@@ -11,13 +11,20 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-// 8 data-analyst domains showcased as small glass cards
+// Each domain hosts a horizontally-stacked list of projects
+type Project = {
+  name: string;
+  blurb: string;
+  tags?: string[];
+};
+
 type Domain = {
   title: string;
   description: string;
   tools: string[];
   Icon: LucideIcon;
   accent: string; // tailwind gradient classes
+  projects: Project[]; // add / remove freely — they scroll horizontally
 };
 
 const domains: Domain[] = [
@@ -28,6 +35,7 @@ const domains: Domain[] = [
     tools: ["GA4", "SQL", "Looker"],
     Icon: Megaphone,
     accent: "from-pink-500/30 via-fuchsia-500/15 to-purple-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your marketing project here." }],
   },
   {
     title: "Finance",
@@ -36,6 +44,7 @@ const domains: Domain[] = [
     tools: ["Power BI", "DAX", "Python"],
     Icon: Landmark,
     accent: "from-emerald-500/30 via-teal-500/15 to-cyan-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your finance project here." }],
   },
   {
     title: "HR",
@@ -44,6 +53,7 @@ const domains: Domain[] = [
     tools: ["Tableau", "SQL", "scikit-learn"],
     Icon: Users,
     accent: "from-indigo-500/30 via-violet-500/15 to-purple-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your HR project here." }],
   },
   {
     title: "Sales",
@@ -52,6 +62,7 @@ const domains: Domain[] = [
     tools: ["Power BI", "Salesforce", "SQL"],
     Icon: TrendingUp,
     accent: "from-amber-500/30 via-orange-500/15 to-rose-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your sales project here." }],
   },
   {
     title: "Operations",
@@ -60,6 +71,7 @@ const domains: Domain[] = [
     tools: ["Python", "SQL", "Power Query"],
     Icon: Settings2,
     accent: "from-sky-500/30 via-blue-500/15 to-indigo-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your operations project here." }],
   },
   {
     title: "Supply Chain",
@@ -68,6 +80,7 @@ const domains: Domain[] = [
     tools: ["Python", "Prophet", "SQL"],
     Icon: Truck,
     accent: "from-lime-500/30 via-emerald-500/15 to-teal-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your supply chain project here." }],
   },
   {
     title: "Project Management",
@@ -76,6 +89,7 @@ const domains: Domain[] = [
     tools: ["Jira API", "Power BI", "DAX"],
     Icon: KanbanSquare,
     accent: "from-fuchsia-500/30 via-purple-500/15 to-indigo-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your PM project here." }],
   },
   {
     title: "Accounting",
@@ -84,6 +98,7 @@ const domains: Domain[] = [
     tools: ["Excel", "Power Query", "SQL"],
     Icon: Calculator,
     accent: "from-rose-500/30 via-pink-500/15 to-fuchsia-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your accounting project here." }],
   },
 ];
 
@@ -153,16 +168,40 @@ export function Projects() {
                       {d.description}
                     </p>
 
-                    {/* Project slot — replace this with the actual project for this domain */}
-                    <div className="mt-6 flex-1 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] p-6 flex items-center justify-center text-center min-h-[12rem]">
-                      <div>
-                        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-slate-400">
-                          Project slot
-                        </p>
-                        <p className="mt-2 text-sm text-slate-400/80 max-w-xs">
-                          Drop your {d.title.toLowerCase()} project here —
-                          screenshots, embedded dashboard, case study, or links.
-                        </p>
+                    {/* Horizontal project rail — add more entries in the domain's `projects` array */}
+                    <div className="mt-6 flex-1 -mx-2 px-2 overflow-x-auto">
+                      <div className="flex gap-4 snap-x snap-mandatory pb-2 min-h-[12rem]">
+                        {d.projects.map((p) => (
+                          <div
+                            key={p.name}
+                            className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] p-5 flex flex-col hover:border-white/30 hover:bg-white/[0.05] transition-colors"
+                          >
+                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-purple-300/80">
+                              {p.name}
+                            </p>
+                            <p className="mt-2 text-sm text-slate-300/90 leading-relaxed">
+                              {p.blurb}
+                            </p>
+                            {p.tags && (
+                              <div className="mt-auto pt-3 flex flex-wrap gap-1.5">
+                                {p.tags.map((t) => (
+                                  <span
+                                    key={t}
+                                    className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-purple-200/80"
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                        {/* Add-more affordance */}
+                        <div className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5 flex items-center justify-center text-center">
+                          <p className="text-xs text-slate-500">
+                            + Add another {d.title.toLowerCase()} project
+                          </p>
+                        </div>
                       </div>
                     </div>
 
