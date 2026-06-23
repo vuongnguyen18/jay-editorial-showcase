@@ -8,15 +8,20 @@ import {
   Truck,
   KanbanSquare,
   Calculator,
+  Github,
+  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 
-// Each domain hosts a horizontally-stacked list of projects
+// Each domain hosts a 2-per-row grid of detailed project cards
 type Project = {
-  name: string;
-  blurb: string;
-  tags?: string[];
+  title: string;
+  description: string;
+  tags: string[];
+  github?: string;
+  link?: string;
 };
+
 
 type Domain = {
   title: string;
