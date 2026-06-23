@@ -168,16 +168,40 @@ export function Projects() {
                       {d.description}
                     </p>
 
-                    {/* Project slot — replace this with the actual project for this domain */}
-                    <div className="mt-6 flex-1 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] p-6 flex items-center justify-center text-center min-h-[12rem]">
-                      <div>
-                        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-slate-400">
-                          Project slot
-                        </p>
-                        <p className="mt-2 text-sm text-slate-400/80 max-w-xs">
-                          Drop your {d.title.toLowerCase()} project here —
-                          screenshots, embedded dashboard, case study, or links.
-                        </p>
+                    {/* Horizontal project rail — add more entries in the domain's `projects` array */}
+                    <div className="mt-6 flex-1 -mx-2 px-2 overflow-x-auto">
+                      <div className="flex gap-4 snap-x snap-mandatory pb-2 min-h-[12rem]">
+                        {d.projects.map((p) => (
+                          <div
+                            key={p.name}
+                            className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] p-5 flex flex-col hover:border-white/30 hover:bg-white/[0.05] transition-colors"
+                          >
+                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-purple-300/80">
+                              {p.name}
+                            </p>
+                            <p className="mt-2 text-sm text-slate-300/90 leading-relaxed">
+                              {p.blurb}
+                            </p>
+                            {p.tags && (
+                              <div className="mt-auto pt-3 flex flex-wrap gap-1.5">
+                                {p.tags.map((t) => (
+                                  <span
+                                    key={t}
+                                    className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-purple-200/80"
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                        {/* Add-more affordance */}
+                        <div className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5 flex items-center justify-center text-center">
+                          <p className="text-xs text-slate-500">
+                            + Add another {d.title.toLowerCase()} project
+                          </p>
+                        </div>
                       </div>
                     </div>
 
