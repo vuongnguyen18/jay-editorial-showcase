@@ -11,13 +11,20 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-// 8 data-analyst domains showcased as small glass cards
+// Each domain hosts a horizontally-stacked list of projects
+type Project = {
+  name: string;
+  blurb: string;
+  tags?: string[];
+};
+
 type Domain = {
   title: string;
   description: string;
   tools: string[];
   Icon: LucideIcon;
   accent: string; // tailwind gradient classes
+  projects: Project[]; // add / remove freely — they scroll horizontally
 };
 
 const domains: Domain[] = [
@@ -28,6 +35,7 @@ const domains: Domain[] = [
     tools: ["GA4", "SQL", "Looker"],
     Icon: Megaphone,
     accent: "from-pink-500/30 via-fuchsia-500/15 to-purple-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your marketing project here." }],
   },
   {
     title: "Finance",
@@ -36,6 +44,7 @@ const domains: Domain[] = [
     tools: ["Power BI", "DAX", "Python"],
     Icon: Landmark,
     accent: "from-emerald-500/30 via-teal-500/15 to-cyan-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your finance project here." }],
   },
   {
     title: "HR",
@@ -44,6 +53,7 @@ const domains: Domain[] = [
     tools: ["Tableau", "SQL", "scikit-learn"],
     Icon: Users,
     accent: "from-indigo-500/30 via-violet-500/15 to-purple-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your HR project here." }],
   },
   {
     title: "Sales",
@@ -52,6 +62,7 @@ const domains: Domain[] = [
     tools: ["Power BI", "Salesforce", "SQL"],
     Icon: TrendingUp,
     accent: "from-amber-500/30 via-orange-500/15 to-rose-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your sales project here." }],
   },
   {
     title: "Operations",
@@ -60,6 +71,7 @@ const domains: Domain[] = [
     tools: ["Python", "SQL", "Power Query"],
     Icon: Settings2,
     accent: "from-sky-500/30 via-blue-500/15 to-indigo-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your operations project here." }],
   },
   {
     title: "Supply Chain",
@@ -68,6 +80,7 @@ const domains: Domain[] = [
     tools: ["Python", "Prophet", "SQL"],
     Icon: Truck,
     accent: "from-lime-500/30 via-emerald-500/15 to-teal-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your supply chain project here." }],
   },
   {
     title: "Project Management",
@@ -76,6 +89,7 @@ const domains: Domain[] = [
     tools: ["Jira API", "Power BI", "DAX"],
     Icon: KanbanSquare,
     accent: "from-fuchsia-500/30 via-purple-500/15 to-indigo-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your PM project here." }],
   },
   {
     title: "Accounting",
@@ -84,6 +98,7 @@ const domains: Domain[] = [
     tools: ["Excel", "Power Query", "SQL"],
     Icon: Calculator,
     accent: "from-rose-500/30 via-pink-500/15 to-fuchsia-500/25",
+    projects: [{ name: "Project 01", blurb: "Add your accounting project here." }],
   },
 ];
 
