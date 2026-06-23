@@ -113,41 +113,65 @@ export function Projects() {
           </div>
         </Reveal>
 
-        {/* 8 domain cards — 1 / 2 / 4 column responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 8 huge domain cards — 1 / 2 column layout, each ready for a project */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {domains.map((d, i) => {
             const { Icon } = d;
             return (
               <Reveal key={d.title} delay={i * 80}>
                 <article
-                  className="group relative h-full rounded-2xl border border-white/10 bg-[#0c0a20]/45 p-6 backdrop-blur-xl shadow-xl overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 hover:shadow-purple-500/10"
+                  className="group relative flex h-full min-h-[32rem] flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c0a20]/50 p-8 md:p-10 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 hover:shadow-purple-500/10"
                   aria-label={`${d.title} analytics domain`}
                 >
                   {/* Accent gradient wash */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${d.accent} opacity-40 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none`}
+                    className={`absolute inset-0 bg-gradient-to-br ${d.accent} opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}
                   />
-                  {/* Soft orb */}
-                  <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+                  {/* Soft orbs */}
+                  <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+                  <div className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-purple-500/10 blur-3xl pointer-events-none" />
 
                   <div className="relative z-10 flex h-full flex-col">
-                    <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 backdrop-blur">
-                      <Icon className="h-5 w-5 text-purple-200" aria-hidden />
+                    {/* Header */}
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur">
+                          <Icon className="h-6 w-6 text-purple-200" aria-hidden />
+                        </div>
+                        <div>
+                          <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.3em] text-purple-300/80">
+                            Domain {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <h3 className="mt-1 font-sans text-2xl md:text-3xl font-bold text-white tracking-tight group-hover:text-purple-200 transition-colors">
+                            {d.title}
+                          </h3>
+                        </div>
+                      </div>
                     </div>
 
-                    <h3 className="font-sans text-lg font-semibold text-white tracking-tight group-hover:text-purple-200 transition-colors">
-                      {d.title}
-                    </h3>
-
-                    <p className="mt-2 text-sm leading-relaxed text-slate-300/90">
+                    <p className="mt-5 text-base leading-relaxed text-slate-300/90">
                       {d.description}
                     </p>
 
-                    <div className="mt-5 flex flex-wrap gap-1.5">
+                    {/* Project slot — replace this with the actual project for this domain */}
+                    <div className="mt-6 flex-1 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] p-6 flex items-center justify-center text-center min-h-[12rem]">
+                      <div>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-slate-400">
+                          Project slot
+                        </p>
+                        <p className="mt-2 text-sm text-slate-400/80 max-w-xs">
+                          Drop your {d.title.toLowerCase()} project here —
+                          screenshots, embedded dashboard, case study, or links.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Tool chips */}
+                    <div className="mt-6 flex flex-wrap gap-2">
                       {d.tools.map((t) => (
                         <span
                           key={t}
-                          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-purple-200/90"
+                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-purple-200/90"
                         >
                           {t}
                         </span>
