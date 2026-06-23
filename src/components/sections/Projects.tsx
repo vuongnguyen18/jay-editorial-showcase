@@ -128,49 +128,59 @@ export function Projects() {
           </div>
         </Reveal>
 
-        {/* 8 huge domain cards — 1 / 2 column layout, each ready for a project */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Vertical stack of domains — each row: [domain header] horizontally → [projects rail] */}
+        <div className="flex flex-col gap-10">
           {domains.map((d, i) => {
             const { Icon } = d;
             return (
-              <Reveal key={d.title} delay={i * 80}>
+              <Reveal key={d.title} delay={i * 60}>
                 <article
-                  className="group relative flex h-full min-h-[32rem] flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c0a20]/50 p-8 md:p-10 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 hover:shadow-purple-500/10"
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c0a20]/50 p-6 md:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-white/20 hover:shadow-purple-500/10"
                   aria-label={`${d.title} analytics domain`}
                 >
                   {/* Accent gradient wash */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${d.accent} opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}
+                    className={`absolute inset-0 bg-gradient-to-br ${d.accent} opacity-25 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none`}
                   />
-                  {/* Soft orbs */}
                   <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-white/5 blur-3xl pointer-events-none" />
-                  <div className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-purple-500/10 blur-3xl pointer-events-none" />
 
-                  <div className="relative z-10 flex h-full flex-col">
-                    {/* Header */}
-                    <div className="flex items-start justify-between gap-4">
+                  {/* Horizontal layout: domain info (left) + project rail (right) */}
+                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[20rem_1fr] gap-8 items-stretch">
+                    {/* Domain info */}
+                    <div className="flex flex-col">
                       <div className="flex items-center gap-4">
-                        <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur">
+                        <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur shrink-0">
                           <Icon className="h-6 w-6 text-purple-200" aria-hidden />
                         </div>
                         <div>
                           <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.3em] text-purple-300/80">
                             Domain {String(i + 1).padStart(2, "0")}
                           </span>
-                          <h3 className="mt-1 font-sans text-2xl md:text-3xl font-bold text-white tracking-tight group-hover:text-purple-200 transition-colors">
+                          <h3 className="mt-1 font-sans text-2xl md:text-3xl font-bold text-white tracking-tight">
                             {d.title}
                           </h3>
                         </div>
                       </div>
+
+                      <p className="mt-5 text-sm leading-relaxed text-slate-300/90">
+                        {d.description}
+                      </p>
+
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {d.tools.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-purple-200/90"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
-                    <p className="mt-5 text-base leading-relaxed text-slate-300/90">
-                      {d.description}
-                    </p>
-
-                    {/* Horizontal project rail — add more entries in the domain's `projects` array */}
-                    <div className="mt-6 flex-1 -mx-2 px-2 overflow-x-auto">
-                      <div className="flex gap-4 snap-x snap-mandatory pb-2 min-h-[12rem]">
+                    {/* Horizontal project rail */}
+                    <div className="-mx-2 px-2 overflow-x-auto">
+                      <div className="flex gap-4 snap-x snap-mandatory pb-2 min-h-[14rem]">
                         {d.projects.map((p) => (
                           <div
                             key={p.name}
@@ -196,25 +206,12 @@ export function Projects() {
                             )}
                           </div>
                         ))}
-                        {/* Add-more affordance */}
                         <div className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5 flex items-center justify-center text-center">
                           <p className="text-xs text-slate-500">
                             + Add another {d.title.toLowerCase()} project
                           </p>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Tool chips */}
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {d.tools.map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-purple-200/90"
-                        >
-                          {t}
-                        </span>
-                      ))}
                     </div>
                   </div>
                 </article>
