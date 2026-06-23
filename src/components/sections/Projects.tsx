@@ -183,40 +183,68 @@ export function Projects() {
                       </div>
                     </div>
 
-                    {/* Horizontal project rail */}
-                    <div className="-mx-2 px-2 overflow-x-auto">
-                      <div className="flex gap-4 snap-x snap-mandatory pb-2 min-h-[14rem]">
-                        {d.projects.map((p) => (
-                          <div
-                            key={p.name}
-                            className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] p-5 flex flex-col hover:border-white/30 hover:bg-white/[0.05] transition-colors"
-                          >
-                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-purple-300/80">
-                              {p.name}
-                            </p>
-                            <p className="mt-2 text-sm text-slate-300/90 leading-relaxed">
-                              {p.blurb}
-                            </p>
-                            {p.tags && (
-                              <div className="mt-auto pt-3 flex flex-wrap gap-1.5">
-                                {p.tags.map((t) => (
-                                  <span
-                                    key={t}
-                                    className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-purple-200/80"
-                                  >
-                                    {t}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
+                    {/* Project grid — 2 per row */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {d.projects.map((p) => (
+                        <div
+                          key={p.title}
+                          className="group/card rounded-[1.5rem] border border-white/10 bg-[#0c0a20]/60 p-6 backdrop-blur-xl shadow-xl hover:-translate-y-1 hover:border-white/20 transition-all duration-500"
+                        >
+                          {/* Image / gradient preview */}
+                          <div className={`relative aspect-[16/10] mb-6 rounded-2xl overflow-hidden border border-white/5 bg-gradient-to-br ${d.accent}`}>
+                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(168,85,247,0.25),_transparent_60%)]" />
+                            <div className="absolute h-32 w-32 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-2xl group-hover/card:bg-fuchsia-500/15 transition-all duration-700" />
                           </div>
-                        ))}
-                        <div className="snap-start shrink-0 w-64 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5 flex items-center justify-center text-center">
-                          <p className="text-xs text-slate-500">
-                            + Add another {d.title.toLowerCase()} project
+
+                          {/* Title + action icons */}
+                          <div className="flex items-center justify-between gap-4">
+                            <h4 className="font-sans text-lg font-bold text-purple-300 tracking-tight">
+                              {p.title}
+                            </h4>
+                            <div className="flex items-center gap-2 shrink-0">
+                              {p.github && (
+                                <a
+                                  href={p.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-slate-400 hover:text-white p-1 hover:bg-white/5 rounded-lg transition-colors"
+                                  aria-label={`${p.title} source`}
+                                >
+                                  <Github className="h-4 w-4" />
+                                </a>
+                              )}
+                              {p.link && (
+                                <a
+                                  href={p.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-slate-400 hover:text-white p-1 hover:bg-white/5 rounded-lg transition-colors"
+                                  aria-label={`${p.title} live`}
+                                >
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Description */}
+                          <p className="mt-3 text-sm leading-relaxed text-slate-300/90">
+                            {p.description}
                           </p>
+
+                          {/* Tag pills */}
+                          <div className="mt-5 flex flex-wrap gap-2">
+                            {p.tags.map((t) => (
+                              <span
+                                key={t}
+                                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-purple-200/90"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </article>
