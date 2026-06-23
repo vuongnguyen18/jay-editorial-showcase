@@ -145,7 +145,7 @@ export function Projects() {
                   <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-white/5 blur-3xl pointer-events-none" />
 
                   {/* Horizontal layout: domain info (left) + project rail (right) */}
-                  <div className="relative z-10 grid grid-cols-[18rem_1fr] gap-8 items-stretch">
+                  <div className="relative z-10 flex flex-col gap-6">
                     {/* Domain info */}
                     <div className="flex flex-col">
                       <div className="flex items-center gap-4">
