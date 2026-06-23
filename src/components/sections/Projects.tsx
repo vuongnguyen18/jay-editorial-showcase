@@ -32,6 +32,8 @@ type Domain = {
   projects: Project[]; // add / remove freely — they scroll horizontally
 };
 
+const sampleTags = ["Python", "SQL", "Power BI"];
+
 const domains: Domain[] = [
   {
     title: "Marketing",
@@ -40,7 +42,12 @@ const domains: Domain[] = [
     tools: ["GA4", "SQL", "Looker"],
     Icon: Megaphone,
     accent: "from-pink-500/30 via-fuchsia-500/15 to-purple-500/25",
-    projects: [{ title: "Project 01", description: "Add your marketing project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "Campaign Attribution", description: "Multi-touch attribution model across paid, organic and email channels.", tags: ["GA4", "SQL", "Python"] },
+      { title: "SEO Keyword Tracker", description: "Automated rank monitoring with weekly opportunity reports.", tags: ["Python", "BigQuery"] },
+      { title: "Funnel Analytics", description: "Drop-off and cohort analysis across acquisition to checkout.", tags: ["Looker", "SQL"] },
+      { title: "Shopify Performance", description: "Storefront speed & conversion uplift dashboard.", tags: ["Shopify", "Looker"] },
+    ],
   },
   {
     title: "Finance",
@@ -49,7 +56,12 @@ const domains: Domain[] = [
     tools: ["Power BI", "DAX", "Python"],
     Icon: Landmark,
     accent: "from-emerald-500/30 via-teal-500/15 to-cyan-500/25",
-    projects: [{ title: "Project 01", description: "Add your finance project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "P&L Dashboard", description: "Rolling 13-month P&L with FX-adjusted KPIs and drilldowns.", tags: ["Power BI", "DAX"] },
+      { title: "Cash Flow Forecast", description: "Driver-based 12-week cash forecast with scenarios.", tags: ["Python", "Excel"] },
+      { title: "Variance Analyzer", description: "Budget vs actual with automated commentary.", tags: ["DAX", "SQL"] },
+      { title: "FX Exposure", description: "Daily FX exposure & hedging coverage tracker.", tags: ["Python", "Power BI"] },
+    ],
   },
   {
     title: "HR",
@@ -58,7 +70,12 @@ const domains: Domain[] = [
     tools: ["Tableau", "SQL", "scikit-learn"],
     Icon: Users,
     accent: "from-indigo-500/30 via-violet-500/15 to-purple-500/25",
-    projects: [{ title: "Project 01", description: "Add your HR project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "Attrition Predictor", description: "Classification model flagging at-risk employees by month.", tags: ["scikit-learn", "SQL"] },
+      { title: "Headcount Planning", description: "What-if hiring plan with org-chart visualization.", tags: ["Tableau", "SQL"] },
+      { title: "Engagement Pulse", description: "Quarterly survey sentiment with NLP topic clustering.", tags: ["Python", "NLP"] },
+      { title: "Comp Benchmarking", description: "Pay equity & benchmark dashboard across functions.", tags: ["Tableau"] },
+    ],
   },
   {
     title: "Sales",
@@ -67,7 +84,12 @@ const domains: Domain[] = [
     tools: ["Power BI", "Salesforce", "SQL"],
     Icon: TrendingUp,
     accent: "from-amber-500/30 via-orange-500/15 to-rose-500/25",
-    projects: [{ title: "Project 01", description: "Add your sales project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "Pipeline Health", description: "Stage velocity, slippage and conversion analytics.", tags: ["Salesforce", "Power BI"] },
+      { title: "Win-Rate Cohorts", description: "Win-rate cohorts by segment, rep and product line.", tags: ["SQL", "DAX"] },
+      { title: "Territory Pacing", description: "Quota pacing with mid-quarter rebalancing alerts.", tags: ["Power BI"] },
+      { title: "Lead Scoring", description: "Probabilistic lead scoring tuned to closed-won outcomes.", tags: ["Python", "scikit-learn"] },
+    ],
   },
   {
     title: "Operations",
@@ -76,7 +98,12 @@ const domains: Domain[] = [
     tools: ["Python", "SQL", "Power Query"],
     Icon: Settings2,
     accent: "from-sky-500/30 via-blue-500/15 to-indigo-500/25",
-    projects: [{ title: "Project 01", description: "Add your operations project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "SLA Monitor", description: "Real-time SLA compliance with breach root-cause tagging.", tags: ["SQL", "Power BI"] },
+      { title: "Throughput Analyzer", description: "Bottleneck detection across the production pipeline.", tags: ["Python", "Pandas"] },
+      { title: "Incident RCA", description: "Cluster incidents and surface recurring failure modes.", tags: ["Python", "NLP"] },
+      { title: "Capacity Planner", description: "Staffing & shift optimization based on demand curves.", tags: ["Power Query"] },
+    ],
   },
   {
     title: "Supply Chain",
@@ -85,7 +112,12 @@ const domains: Domain[] = [
     tools: ["Python", "Prophet", "SQL"],
     Icon: Truck,
     accent: "from-lime-500/30 via-emerald-500/15 to-teal-500/25",
-    projects: [{ title: "Project 01", description: "Add your supply chain project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "Demand Forecast", description: "SKU-level demand forecast with Prophet and seasonality.", tags: ["Prophet", "Python"] },
+      { title: "Inventory Turnover", description: "DOH, stockout risk and reorder point optimization.", tags: ["SQL", "Power BI"] },
+      { title: "Supplier Scorecard", description: "OTIF, defect and lead-time scorecards by supplier.", tags: ["Power BI"] },
+      { title: "Anomaly Detection", description: "Outlier detection in shipment & customs data.", tags: ["Python", "scikit-learn"] },
+    ],
   },
   {
     title: "Project Management",
@@ -94,7 +126,12 @@ const domains: Domain[] = [
     tools: ["Jira API", "Power BI", "DAX"],
     Icon: KanbanSquare,
     accent: "from-fuchsia-500/30 via-purple-500/15 to-indigo-500/25",
-    projects: [{ title: "Project 01", description: "Add your PM project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "Sprint Burn-down", description: "Live burn-down with velocity & scope-creep alerts.", tags: ["Jira API", "Power BI"] },
+      { title: "Capacity Planner", description: "Team capacity vs commitment across portfolios.", tags: ["DAX", "Power BI"] },
+      { title: "Milestone Tracker", description: "Cross-program milestone & dependency dashboard.", tags: ["Power BI"] },
+      { title: "Timesheet Insights", description: "Effort distribution and billable utilization analytics.", tags: ["SQL", "DAX"] },
+    ],
   },
   {
     title: "Accounting",
@@ -103,7 +140,12 @@ const domains: Domain[] = [
     tools: ["Excel", "Power Query", "SQL"],
     Icon: Calculator,
     accent: "from-rose-500/30 via-pink-500/15 to-fuchsia-500/25",
-    projects: [{ title: "Project 01", description: "Add your accounting project here.", tags: ["Add", "Tags"] }],
+    projects: [
+      { title: "AR Aging Dashboard", description: "Aging buckets, DSO trends and collector workload view.", tags: ["Power BI", "SQL"] },
+      { title: "AP Automation", description: "Three-way match automation with exception routing.", tags: ["Power Query"] },
+      { title: "Ledger Reconciliation", description: "Automated GL recon with variance commentary.", tags: ["Excel", "Python"] },
+      { title: "Audit Pack", description: "Audit-ready evidence pack with drill-down to journals.", tags: ["Power BI"] },
+    ],
   },
 ];
 
