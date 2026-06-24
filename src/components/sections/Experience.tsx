@@ -7,7 +7,7 @@ const roles = [
     org: "BIG Digital",
     place: "Melbourne",
     notes:
-      "Working with e-commerce and marketing data across WordPress and Shopify. Building automated reporting pipelines with Python and SQL, improving data access for stakeholders, and supporting SEO performance analysis through keyword tracking and reporting.",
+      "Working with e-commerce, customer, product, and marketing data across WordPress and Shopify. Managing product information, pricing, categorisation, inventory signals, best-selling and low-performing products, while tracking website traffic, user engagement, and campaign performance. Building automated reporting workflows with Python and SQL, reducing manual reporting time by 60% and improving access to timely business insights for stakeholders.",
   },
   {
     period: "2023 — 2024",
