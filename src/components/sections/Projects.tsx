@@ -54,28 +54,30 @@ const domains: Domain[] = [
     icon: Megaphone,
     projects: [
       {
+        title: "E-commerce Marketing Funnel Analytics",
+        description:
+          "Built an end-to-end Power BI dashboard using SQL Server and DAX to analyse e-commerce customer journey behaviour, traffic source performance, customer segments, device-level conversion, and funnel drop-off opportunities before purchase.",
+        tags: ["SQL Server", "Power BI", "DAX", "Power Query", "Star Schema", "Marketing Analytics"],
+        imageUrl: "/images/e-commerce-marketing.png",
+        githubUrl: "https://github.com/vuongnguyen18/ecommerce-marketing-funnel-analytics",
+        liveDemoUrl: "https://app.powerbi.com/view?r=eyJrIjoiZGFiNmMxMmUtZWY2MS00OTg5LWJjMGItZDJkM2ZhYzU0OTVmIiwidCI6ImMyMDI1ODljLTdiMGUtNDY3YS1iMTFhLTM4Y2Q1NDk0OGNmMyJ9",
+      },
+      {
         title: "Netflix Content Strategy",
         description:
           "Conducted content trend analysis and audience insight exploration on Netflix streaming catalogues to identify genre patterns, release behaviour, and emerging viewer interests.",
         tags: [
-          "Python",
-          "pandas",
-          "Matplotlib",
-          "Seaborn",
-          "scikit-learn",
-          "NLP",
+          "SQL Server",
+          "Power BI",
+          "DAX",
+          "Power Query",
+          "Star Schema",
+          "Marketing Analytics",
         ],
         imageUrl: "/images/netflix_logo.png",
         githubUrl: "https://github.com/vuongnguyen18/Netflix_Study_Case",
         liveDemoUrl: "https://github.com/vuongnguyen18/Netflix_Study_Case",
-      },
-      {
-        title: "Coming Soon",
-        description:
-          "Upcoming campaign attribution modelling analysing cross-channel conversions and ad budget allocation.",
-        tags: ["Python", "Attribution Modelling", "Marketing Mix"],
-        isComingSoon: true,
-      },
+      }
     ],
   },
   {
@@ -335,92 +337,107 @@ export function Projects() {
 
                     {/* Project Grid */}
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                      {domain.projects.map((project) => (
-                        <div
-                          key={project.title}
-                          className="group/card relative flex min-h-[360px] flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-white/10 hover:shadow-purple-500/5"
-                        >
-                          <div>
-                            {/* Project Image / Thumbnail */}
-                            <div className="relative mb-4 aspect-[16/9] overflow-hidden rounded-xl border border-white/10 bg-[#080816] shadow-inner">
-                              {project.imageUrl ? (
-                                <>
-                                  <img
-                                    src={project.imageUrl}
-                                    alt={`${project.title} dashboard preview`}
-                                    className="h-full w-full object-cover object-top opacity-90 transition-all duration-700 group-hover/card:scale-105 group-hover/card:opacity-100"
-                                  />
+                      {domain.projects.map((project) => {
+                        const cardContent = (
+                          <div className="group/card relative flex min-h-[360px] flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-white/10 hover:shadow-purple-500/5">
+                            <div>
+                              {/* Project Image / Thumbnail */}
+                              <div className="relative mb-4 aspect-[16/9] overflow-hidden rounded-xl border border-white/10 bg-[#080816] shadow-inner">
+                                {project.imageUrl ? (
+                                  <>
+                                    <img
+                                      src={project.imageUrl}
+                                      alt={`${project.title} dashboard preview`}
+                                      className="h-full w-full object-cover object-top opacity-90 transition-all duration-700 group-hover/card:scale-105 group-hover/card:opacity-100"
+                                    />
 
-                                  {/* Dark overlay for consistency */}
-                                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050510]/45 via-transparent to-transparent" />
-                                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
-                                </>
-                              ) : (
-                                <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-pink-500/10">
-                                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-[#0c0a20]/80 to-[#050510]" />
-                                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-pink-500/10 opacity-70 transition-transform duration-700 group-hover/card:scale-105" />
-                                  <div className="pointer-events-none absolute h-24 w-24 rounded-full bg-purple-500/10 blur-2xl transition-all duration-700 group-hover/card:bg-fuchsia-500/15" />
+                                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050510]/45 via-transparent to-transparent" />
+                                    <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
+                                  </>
+                                ) : (
+                                  <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-pink-500/10">
+                                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-[#0c0a20]/80 to-[#050510]" />
+                                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-pink-500/10 opacity-70 transition-transform duration-700 group-hover/card:scale-105" />
+                                    <div className="pointer-events-none absolute h-24 w-24 rounded-full bg-purple-500/10 blur-2xl transition-all duration-700 group-hover/card:bg-fuchsia-500/15" />
 
-                                  <span className="relative z-10 font-mono text-[10px] uppercase tracking-wider text-purple-300/40">
-                                    Visualization Model
-                                  </span>
-                                </div>
-                              )}
-                            </div>
-
-                            {/* Title & Icons */}
-                            <div className="flex items-start justify-between gap-4">
-                              <h4 className="font-sans text-lg font-semibold leading-snug text-white transition-colors group-hover/card:text-purple-300">
-                                {project.title}
-                              </h4>
-
-                              <div className="flex shrink-0 items-center gap-2">
-                                {project.githubUrl && (
-                                  <a
-                                    href={project.githubUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="rounded-lg p-1.5 text-slate-400 transition-all hover:bg-white/5 hover:text-white"
-                                    title="View Repository"
-                                    aria-label={`${project.title} GitHub repository`}
-                                  >
-                                    <Github className="h-4 w-4" />
-                                  </a>
-                                )}
-
-                                {project.liveDemoUrl && (
-                                  <a
-                                    href={project.liveDemoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="rounded-lg p-1.5 text-slate-400 transition-all hover:bg-white/5 hover:text-white"
-                                    title="Live Demo"
-                                    aria-label={`${project.title} live demo`}
-                                  >
-                                    <ExternalLink className="h-4 w-4" />
-                                  </a>
+                                    <span className="relative z-10 font-mono text-[10px] uppercase tracking-wider text-purple-300/40">
+                                      Visualization Model
+                                    </span>
+                                  </div>
                                 )}
                               </div>
+
+                              {/* Title & Icons */}
+                              <div className="flex items-start justify-between gap-4">
+                                <h4 className="font-sans text-lg font-semibold leading-snug text-white transition-colors group-hover/card:text-purple-300">
+                                  {project.title}
+                                </h4>
+
+                                <div className="flex shrink-0 items-center gap-2">
+                                  {project.githubUrl && (
+                                    <a
+                                      href={project.githubUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={(event) => event.stopPropagation()}
+                                      className="rounded-lg p-1.5 text-slate-400 transition-all hover:bg-white/5 hover:text-white"
+                                      title="View Repository"
+                                      aria-label={`${project.title} GitHub repository`}
+                                    >
+                                      <Github className="h-4 w-4" />
+                                    </a>
+                                  )}
+
+                                  {project.liveDemoUrl && (
+                                    <a
+                                      href={project.liveDemoUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={(event) => event.stopPropagation()}
+                                      className="rounded-lg p-1.5 text-slate-400 transition-all hover:bg-white/5 hover:text-white"
+                                      title="Live Demo"
+                                      aria-label={`${project.title} live demo`}
+                                    >
+                                      <ExternalLink className="h-4 w-4" />
+                                    </a>
+                                  )}
+                                </div>
+                              </div>
+
+                              <p className="mt-2 line-clamp-3 font-sans text-xs leading-relaxed text-slate-300">
+                                {project.description}
+                              </p>
                             </div>
 
-                            <p className="mt-2 line-clamp-3 font-sans text-xs leading-relaxed text-slate-300">
-                              {project.description}
-                            </p>
+                            {/* Tech stack tags */}
+                            <div className="mt-6 flex flex-wrap gap-1.5">
+                              {project.tags.map((tag) => (
+                                <span
+                                  key={tag}
+                                  className="rounded-full border border-purple-500/20 bg-purple-500/10 px-2.5 py-1 text-[10px] font-medium text-purple-200"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
                           </div>
+                        );
 
-                          {/* Tech stack tags */}
-                          <div className="mt-6 flex flex-wrap gap-1.5">
-                            {project.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="rounded-full border border-purple-500/20 bg-purple-500/10 px-2.5 py-1 text-[10px] font-medium text-purple-200"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
+                        return project.liveDemoUrl ? (
+                          <a
+                            key={project.title}
+                            href={project.liveDemoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050510]"
+                            aria-label={`Open ${project.title} live demo`}
+                          >
+                            {cardContent}
+                          </a>
+                        ) : (
+                          <div key={project.title}>{cardContent}</div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
