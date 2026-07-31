@@ -104,7 +104,7 @@ const domains: Domain[] = [
         imageUrl: "/images/melbourne_housing.png",
         githubUrl: "https://github.com/vuongnguyen18/Melbourne-Housing-Visualization",
         liveDemoUrl:
-          "https://app.powerbi.com/view?r=eyJrIjoiMmQ3NDViYjMtOWExMi00ZDE5LWIyMDMtODE1MDA2Y2I5ZGU1IiwidCI6ImMyMDI1ODljLTdiMGUtNDY3YS1iMTFhLTM4Y2Q1NDk0OGNmMyJ9&pageName=99af864dd87e48b9ff86",
+          "eyJrIjoiNzQ0NTI0ZTMtZTMwZS00Y2FjLWI2MDYtY2FlZWM1MTkwZmY1IiwidCI6ImMyMDI1ODljLTdiMGUtNDY3YS1iMTFhLTM4Y2Q1NDk0OGNmMyJ9",
       },
       {
         title: "Coming Soon",
@@ -189,16 +189,25 @@ const domains: Domain[] = [
     label: "Operations",
     title: "Operations Automation & Pipeline Monitoring",
     summary:
-      "Automating Shopify/WordPress sales integrations and cleaning multi-platform marketing datasets.",
+      "Optimising pricing, inventory, and procurement decisions through operational analytics and interactive business intelligence.",
     tools: ["Python", "SQL", "Shopify", "WordPress", "Data Pipelines"],
     icon: Sliders,
     projects: [
       {
-        title: "Coming Soon",
+        title: "Used-Car Market Analytics",
         description:
-          "Real-time process monitoring interface tracking cycle times and support queues.",
-        tags: ["Python", "Process Mining", "Dashboards"],
-        isComingSoon: true,
+          "Developed an interactive analytics dashboard to explore vehicle pricing, identify key price drivers, assess inventory liquidity, and uncover procurement opportunities from 370K+ used-car listings.",
+        tags: ["SQL Server",
+          "Power BI",
+          "DAX",
+          "Power Query",
+          "Star Schema",
+          "Operations Analytics",],
+        imageUrl: "/images/used-car-supply-chain.png",
+        githubUrl: "https://github.com/vuongnguyen18/Used-Car-Pricing-Procurement-Analytics",
+        liveDemoUrl:
+          "https://app.fabric.microsoft.com/view?r=eyJrIjoiMDc2YThhYWItNzk1ZS00MmY2LWJmODgtN2JmOTk0YzBkYmQ5IiwidCI6ImMyMDI1ODljLTdiMGUtNDY3YS1iMTFhLTM4Y2Q1NDk0OGNmMyJ9",
+        isComingSoon: false,
       },
     ],
   },

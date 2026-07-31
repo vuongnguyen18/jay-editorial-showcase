@@ -132,7 +132,7 @@ export function Hero() {
               </a>
 
               <a
-                href="https://drive.google.com/uc?export=download&id=1gkNXmUjH7pjTKUX5TPBRbrBXyXla6TEI"
+                href="https://drive.google.com/uc?export=download&id=1XdPHJlr_y7FLp5fgeCvFQaYqJbIrNFde"
                 className="rounded-full border border-ink/40 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.15em] transition-all hover:border-ink hover:bg-ink/5"
               >
                 Download Resume
