@@ -194,6 +194,27 @@ const domains: Domain[] = [
     icon: Sliders,
     projects: [
       {
+        title: "NYC Taxi Operations & Demand Analytics",
+        description:
+          "Built an end-to-end analytics solution using 49M+ NYC Yellow Taxi trip records to analyse demand concentration, fare efficiency, operational performance, and data quality across 2025.",
+        tags: [
+          "Microsoft Fabric",
+          "Fabric Pipelines",
+          "Dataflow Gen2",
+          "Fabric Warehouse",
+          "Direct Lake",
+          "SQL",
+          "DAX",
+          "Operations Analytics",
+        ],
+        imageUrl: "/images/nyc-taxi-operations.png",
+        githubUrl:
+          "https://github.com/vuongnguyen18/NYC_Taxi_Operations_-_Demand_Analytics",
+        liveDemoUrl:
+          "https://app.fabric.microsoft.com/view?r=eyJrIjoiMmZmMTYyZWItYmY3Mi00YzJiLTgzZTQtNTIxMjMzNDAwYjM5IiwidCI6ImMyMDI1ODljLTdiMGUtNDY3YS1iMTFhLTM4Y2Q1NDk0OGNmMyJ9",
+        isComingSoon: false,
+      },
+      {
         title: "Used-Car Market Analytics",
         description:
           "Developed an interactive analytics dashboard to explore vehicle pricing, identify key price drivers, assess inventory liquidity, and uncover procurement opportunities from 370K+ used-car listings.",
@@ -208,7 +229,7 @@ const domains: Domain[] = [
         liveDemoUrl:
           "https://app.fabric.microsoft.com/view?r=eyJrIjoiMDc2YThhYWItNzk1ZS00MmY2LWJmODgtN2JmOTk0YzBkYmQ5IiwidCI6ImMyMDI1ODljLTdiMGUtNDY3YS1iMTFhLTM4Y2Q1NDk0OGNmMyJ9",
         isComingSoon: false,
-      },
+      }
     ],
   },
   {
